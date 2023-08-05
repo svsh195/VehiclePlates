@@ -135,6 +135,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 0;
+    width: 100%;
   }
 
   .nav-bar .nav-items.expanded {
