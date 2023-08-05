@@ -54,9 +54,12 @@ function route(event) {
 }
 
 async function locationHandler() {
-    const location = window.location.pathname;
+    let location = window.location.pathname;
     if (location.length == 0) {
         location = "/";
+    }
+    if (location.startsWith("/VehiclePlates")) {
+        location = location.replace("/VehiclePlates", "");
     }
     const route = routes[location];
     const html = await fetch("./src/views/" + route.template).then((response) => response.text());
@@ -67,3 +70,10 @@ async function locationHandler() {
 window.onpopstate = locationHandler;
 window.route = route;
 locationHandler();
+
+if (window.location.host.endsWith("github.io")) {
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach(link => {
+        link.setAttribute("href", "/VehiclePlates" + link.pathname);
+    });
+}
