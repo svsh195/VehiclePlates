@@ -43,6 +43,11 @@ const routes = {
         name: "special",
         template: "special.html",
         title: "Special plates"
+    },
+    "/notfound": {
+        name: "notfound",
+        template: "notfound.html",
+        title: "Not Found"
     }
 }
 
@@ -61,7 +66,7 @@ async function locationHandler() {
     if (location.startsWith("/VehiclePlates")) {
         location = location.replace("/VehiclePlates", "");
     }
-    const route = routes[location];
+    const route = routes[location] || routes["/notfound"];
     const html = await fetch("./src/views/" + route.template).then((response) => response.text());
     document.getElementById("router-view").innerHTML = html;
     document.title = "Vehicle Plates - " + route.title;
