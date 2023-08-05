@@ -1,0 +1,199 @@
+.nav-container {
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: 100%;
+}
+
+.nav-bar,
+.nav-container {
+  align-items: center;
+  background-color: var(--dark);
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 56px;
+  position: relative;
+}
+
+.nav-bar .nav-brand-plate {
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  font-size: 20px;
+  height: 26px;
+  line-height: 20px;
+  position: absolute;
+  margin: auto 3px;
+  outline: 3px solid white;
+}
+
+.nav-bar .nav-brand-plate img {
+  border-left: 1px solid black;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-sizing: content-box;
+  height: 20px;
+  width: 30px;
+}
+
+.nav-bar .nav-brand-plate p {
+  margin: 0 3px;
+  font-family: Bahnschrift;
+  font-weight: bold;
+  padding-top: 2px;
+}
+
+.nav-bar .nav-items .nav-link {
+  align-items: center;
+  display: flex;
+  color: white;
+  font-family: Bahnschrift;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  margin-left: 12px;
+  text-decoration: none;
+}
+
+.nav-bar .nav-items .nav-link:active,
+.nav-bar .nav-items .nav-link:focus,
+.nav-bar .nav-items .nav-link:hover,
+.nav-bar .nav-toggler:focus,
+.nav-bar .nav-toggler:hover {
+  opacity: 75%;
+}
+
+.nav-bar .nav-items .nav-link::before {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 26px;
+  margin-left: 3px;
+  margin-right: 15px;
+  outline: 3px solid white;
+  width: 26px;
+  content: "";
+}
+
+.nav-bar .nav-items .nav-link.yellow::before {
+  background-color: gold;
+  outline-color: gold;
+}
+
+.nav-bar .nav-items .nav-link.black::before,
+.nav-bar .nav-items .nav-link.red::before,
+.nav-bar .nav-items .nav-link.blue::before {
+  background-color: black;
+  border-color: white;
+  outline-color: black;
+}
+
+.nav-bar .nav-items .nav-link.red::before {
+  background-color: red;
+  outline-color: red;
+}
+
+.nav-bar .nav-items .nav-link.blue::before {
+  background-color: mediumblue;
+  outline-color: mediumblue;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-bar .nav-brand-plate {
+    align-self: flex-start;
+    margin: 15px 3px;
+    position: unset;
+  }
+
+  .nav-bar .nav-toggler {
+    align-self: flex-end;
+    background-color: var(--dark);
+    border: 3px solid var(--dark);
+    border-radius: 5px;
+    box-sizing: border-box;
+    content: "";
+    cursor: pointer;
+    display: flex;
+    height: 26px;
+    margin: 15px 3px;
+    padding: 0 1px;
+    position: absolute;
+    outline: 3px solid white;
+    width: 26px;
+  }
+
+  .nav-bar .nav-items {
+    align-self: flex-start;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .nav-bar .nav-items.expanded {
+    display: flex;
+  }
+
+  .nav-bar .nav-items .nav-link {
+    margin: 3px 0 15px 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-bar,
+  .nav-container {
+    flex-direction: row;
+  }
+
+  .nav-bar .nav-items .nav-link:first-child {
+    margin-left: 0;
+  }
+
+  .nav-bar .nav-toggler {
+    display: none;
+  }
+
+  .nav-bar .nav-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .nav-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .nav-container {
+    max-width: 1320px;
+  }
+}

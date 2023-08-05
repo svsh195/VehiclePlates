@@ -1,0 +1,213 @@
+@font-face {
+  font-family: Mittelschrift;
+  src: url('../../assets/FE-Mittelschrift.woff2');
+}
+
+@font-face {
+  font-family: Engschrift;
+  src: url('../../assets/FE-Engschrift.woff2');
+}
+
+:root {
+  --flag-ru-white: #FFF;
+  --flag-ru-blue: #0036A7;
+  --flag-ru-red: #D62718;
+  --flag-eu-blue: #039;
+
+  --plate-border-width: calc(3px * var(--plate-scale));
+  --plate-country-box-font-family: Bahnschrift;
+  --plate-country-box-width: calc(45px * var(--plate-scale));
+  --plate-country-code-font-size: calc(20px * var(--plate-scale));
+  --plate-country-code-margin-top: calc(36px * var(--plate-scale));
+  --plate-country-flag-margin-top: var(--plate-number-box-margin-top);
+  --plate-country-flag-margin-bottom: calc(var(--plate-country-flag-height) * -1);
+  --plate-country-flag-height: calc(20px * var(--plate-scale));
+  --plate-country-flag-width: calc(30px * var(--plate-scale));
+  --plate-number-box-font-family: Mittelschrift;
+  --plate-number-box-margin-top: calc(12px * var(--plate-scale));
+  --plate-digit-lg-height: calc(76px * var(--plate-scale));
+  --plate-digit-lg-widht: calc(44.5px * var(--plate-scale));
+  --plate-letter-lg-height: calc(76px * var(--plate-scale));
+  --plate-letter-lg-width: calc(47.5px * var(--plate-scale));
+  --plate-digit-sm-height: calc(58px * var(--plate-scale));
+  --plate-digit-sm-widht: calc(33.9605px * var(--plate-scale));
+  --plate-letter-sm-height: calc(58px * var(--plate-scale));
+  --plate-letter-sm-widht: calc(36.25px * var(--plate-scale));
+  --plate-height: calc((112px - 6px) * var(--plate-scale));
+  --plate-width: calc((520px - 6px) * var(--plate-scale));
+  --plate-region-box-padding-right: calc(14px * var(--plate-scale));
+
+  --plate-border-radius: 10px;
+}
+
+.plate {
+  background-color: white;
+  border-color: black;
+  border-radius: var(--plate-border-radius);
+  border-style: solid;
+  border-width: var(--plate-border-width);
+  box-shadow: 0 0 1px 1px black;
+  color: black;
+  display: flex;
+  font-size: 0;
+  height: var(--plate-height);
+  margin: 56px auto;
+  outline-color: white;
+  outline-style: solid;
+  outline-width: var(--plate-border-width);
+  text-transform: uppercase;
+  justify-content: space-between;
+  width: var(--plate-width);
+}
+
+.plate.yellow {
+  background-color: gold;
+  outline-color: gold;
+}
+
+.plate.black,
+.plate.red,
+.plate.blue {
+  background-color: black;
+  border-color: white;
+  color: white;
+  outline-color: black;
+}
+
+.plate.yellow .country-box .flag,
+.plate.black .country-box .flag,
+.plate.red .country-box .flag,
+.plate.blue .country-box .flag {
+  visibility: hidden;
+}
+
+.plate.red {
+  background-color: red;
+  outline-color: red;
+}
+
+.plate.blue {
+  background-color: mediumblue;
+  outline-color: mediumblue;
+}
+
+.plate .country-box {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  width: var(--plate-country-box-width);
+}
+
+.plate .country-box .flag {
+  border: 1px solid black;
+  box-sizing: content-box;
+  margin-top: var(--plate-country-flag-margin-top);
+  height: var(--plate-country-flag-height);
+  width: var(--plate-country-flag-width);
+}
+
+.plate .country-box .code {
+  font-family: var(--plate-country-box-font-family);
+  font-size: var(--plate-country-code-font-size);
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: var(--plate-country-code-margin-top);
+  line-height: var(--plate-country-code-font-size);
+  text-align: center;
+}
+
+.plate .number-box {
+  display: inline-block;
+  margin: var(--plate-number-box-margin-top) auto;
+  width: fit-content;
+}
+
+.plate .region-box {
+  display: inline-block;
+  margin: var(--plate-number-box-margin-top) 0;
+  width: fit-content;
+}
+
+.plate .digit-lg,
+.plate .letter-lg {
+  display: inline-block;
+  font-size: var(--plate-digit-lg-height);
+  font-family: var(--plate-number-box-font-family);
+  line-height: var(--plate-digit-lg-height);
+  vertical-align: bottom;
+  width: var(--plate-digit-lg-widht);
+}
+
+.plate .letter-lg {
+  width: var(--plate-letter-lg-widht);
+}
+
+.plate .digit-sm,
+.plate .letter-sm {
+  display: inline-block;
+  font-size: var(--plate-digit-sm-height);
+  font-family: var(--plate-number-box-font-family);
+  line-height: var(--plate-digit-sm-height);
+  vertical-align: bottom;
+  width: var(--plate-digit-sm-widht);
+}
+
+.plate .letter-sm {
+  width: var(--plate-letter-sm-widht);
+}
+
+.plate .digit-lg,
+.plate .letter-lg,
+.plate .digit-sm,
+.plate .letter-sm {
+  margin-right: calc(var(--plate-border-width) * 2);
+}
+
+.plate .digit-lg:last-child,
+.plate .letter-lg:last-child,
+.plate .digit-sm:last-child,
+.plate .letter-sm:last-child {
+  margin-right: 0;
+}
+
+.plate .special-box {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: inline-block;
+  margin-left: calc(var(--plate-border-width) * 2);
+  width: var(--plate-country-box-width);
+}
+
+.plate .special-box.white {
+  background-color: white;
+}
+
+.plate .special-box.yellow {
+  background-color: yellow;
+}
+
+.plate .special-box.blue {
+  background-color: blue;
+}
+
+.plate .special-box.red {
+  background-color: red;
+}
+
+.plate .special-box.green {
+  background-color: green;
+}
+
+.plate .special-box.greenyellow {
+  background-color: greenyellow;
+}
+
+.plate .special-box.orange {
+  background-color: orange;
+}
+
+.plate .special-box:last-child,
+.plate .region-box:last-child {
+  padding-right: var(--plate-region-box-padding-right);
+}

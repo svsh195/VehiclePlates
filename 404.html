@@ -1,0 +1,49 @@
+<!--
+  This page is a full copy of index.html.
+  The page is required for correct routing on GitHub Pages.
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vehicle Plates</title>
+    <link rel="icon" href="./assets/flag-ru.svg">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="./src/css/nav.css">
+    <link rel="stylesheet" href="./src/css/plate.css">
+  </head>
+  <body data-bs-theme="dark">
+    <header>
+      <div class="nav-bar">
+        <div class="nav-container">
+          <div class="nav-brand-plate">
+            <p>RUS</p>
+            <img src="./assets/flag-ru.svg">
+          </div>
+          <button type="button" class="nav-toggler">
+            <img src="./assets/bars.svg">
+          </button>
+          <div class="nav-items">
+            <a href="/" class="nav-link">Regular</a>
+            <a href="/public" class="nav-link yellow">Public</a>
+            <a href="/military" class="nav-link black">Military</a>
+            <a href="/diplomatic" class="nav-link red">Diplomatic</a>
+            <a href="/emergency" class="nav-link blue">Emergency</a>
+            <a href="/special" class="nav-link">Special</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div id="router-view"></div>
+      </div>
+    </main>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/router.js"></script>
+  </body>
+</html>

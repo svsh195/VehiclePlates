@@ -1,0 +1,90 @@
+/*
+  Some styles were taken from Bootstrap:
+  https://getbootstrap.com/
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #212529;
+}
+
+@media (min-width: 576px) {
+
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .container {
+    max-width: 1320px;
+  }
+}
+
+body {
+  background-color: var(--dark);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 284px) {
+  :root {
+    --plate-scale: 0.5;
+    --plate-border-radius: 5px;
+  }
+}
+
+@media (min-width: 544px) {
+  :root {
+    --plate-scale: 1;
+    --plate-border-radius: 10px;
+  }
+}
+
+@media (min-width: 1064px) {
+  :root {
+    --plate-scale: 2;
+    --plate-border-radius: 20px;
+  }
+}
+
+.plate .info-box.flag-ru {
+  background: linear-gradient(var(--flag-ru-white) 33%, var(--flag-ru-blue) 33%, var(--flag-ru-blue) 66%, var(--flag-ru-red) 0);
+}
