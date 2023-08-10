@@ -8,6 +8,89 @@
   src: url('../../assets/FE-Engschrift.woff2');
 }
 
+.nav-bar .nav-brand.brand-plate {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  font-size: 20px;
+  height: 26px;
+  line-height: 20px;
+  position: absolute;
+  margin: 15px 3px;
+  outline: 3px solid white;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-bar .nav-brand.brand-plate {
+    position: unset;
+  }
+}
+
+.brand-plate img {
+  border-left: 1px solid black;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-sizing: content-box;
+  height: 20px;
+  width: 30px;
+}
+
+.brand-plate p {
+  margin: 0 3px;
+  font-family: Bahnschrift;
+  font-weight: bold;
+  padding-top: 2px;
+}
+
+.nav-link.link-plate::before {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 26px;
+  margin-left: 3px;
+  margin-right: 9px;
+  outline: 3px solid white;
+  width: 26px;
+  content: "";
+}
+
+.nav-link.link-plate.yellow::before {
+  background-color: gold;
+  outline-color: gold;
+}
+
+.nav-link.link-plate.black::before,
+.nav-link.link-plate.red::before,
+.nav-link.link-plate.blue::before {
+  background-color: black;
+  border-color: white;
+  outline-color: black;
+}
+
+.nav-link.link-plate.red::before {
+  background-color: red;
+  outline-color: red;
+}
+
+.nav-link.link-plate.blue::before {
+  background-color: mediumblue;
+  outline-color: mediumblue;
+}
+
+.nav-bar .nav-toggler.toggler-plate {
+  border: 3px solid var(--dark);
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: 3px solid white;
+  margin: 15px 3px;
+  padding: 0 1px;
+  width: 26px;
+  height: 26px;
+}
+
 :root {
   --flag-ru-white: #FFF;
   --flag-ru-blue: #0036A7;
@@ -38,6 +121,13 @@
   --plate-region-box-padding-right: calc(14px * var(--plate-scale));
 
   --plate-border-radius: 10px;
+
+  --plate-letter-height: calc(58px * var(--plate-scale));
+  --plate-letter-width: calc(36.25px * var(--plate-scale));
+  --plate-letter-2-width: calc((36.25px + 6px) * 2 * var(--plate-scale));
+
+  --plate-digit-height: calc(76px * var(--plate-scale));
+  --plate-digit-4-width: calc(44.5px * 4 * var(--plate-scale) + 6px * 4 * var(--plate-scale));
 }
 
 .plate {
@@ -160,7 +250,10 @@
 .plate .digit-lg,
 .plate .letter-lg,
 .plate .digit-sm,
-.plate .letter-sm {
+.plate .letter-sm,
+/* .plate .digit-4,
+.plate .letter-2, */
+.plate .letter {
   margin-right: calc(var(--plate-border-width) * 2);
 }
 
@@ -169,6 +262,13 @@
 .plate .digit-sm:last-child,
 .plate .letter-sm:last-child {
   margin-right: 0;
+}
+
+
+.plate .digit-4:last-child,
+.plate .letter-2:last-child,
+.plate .letter:last-child {
+  margin-right: calc(var(--plate-border-width) * -2);
 }
 
 .plate .special-box {
@@ -210,4 +310,35 @@
 .plate .special-box:last-child,
 .plate .region-box:last-child {
   padding-right: var(--plate-region-box-padding-right);
+}
+
+
+
+.plate .letter {
+  display: inline-block;
+  font-size: var(--plate-letter-height);
+  font-family: var(--plate-number-box-font-family);
+  line-height: var(--plate-letter-height);
+  vertical-align: bottom;
+  width: var(--plate-letter-width);
+}
+
+.plate .letter-2 {
+  display: inline-block;
+  font-size: var(--plate-letter-height);
+  font-family: var(--plate-number-box-font-family);
+  line-height: var(--plate-letter-height);
+  vertical-align: bottom;
+  width: var(--plate-letter-2-width);
+  letter-spacing: calc(6px * var(--plate-scale));
+}
+
+.plate .digit-4 {
+  display: inline-block;
+  font-size: var(--plate-digit-height);
+  font-family: var(--plate-number-box-font-family);
+  line-height: var(--plate-digit-height);
+  vertical-align: bottom;
+  width: var(--plate-digit-4-width);
+  letter-spacing: calc(6px * var(--plate-scale));
 }
